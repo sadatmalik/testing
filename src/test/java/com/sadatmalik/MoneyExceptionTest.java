@@ -24,7 +24,8 @@ public class MoneyExceptionTest {
             new Money(invalidAmount, VALID_CURRENCY);
         });
 
-        Assertions.assertEquals("illegal amount: [" + invalidAmount + "]", thrown.getMessage());
+        Assertions.assertEquals("illegal amount: ["
+                + invalidAmount + "]", thrown.getMessage());
     }
 
     @ParameterizedTest
@@ -35,6 +36,7 @@ public class MoneyExceptionTest {
                 assertThrows(IllegalArgumentException.class, () -> {
                     new Money(VALID_AMOUNT, invalidCurrency);
                 });
-        Assertions.assertEquals("illegal currency: [" + invalidCurrency + "]", thrown.getMessage());
+        Assertions.assertEquals("illegal currency: ["
+                + invalidCurrency + "]", thrown.getMessage());
     }
 }
